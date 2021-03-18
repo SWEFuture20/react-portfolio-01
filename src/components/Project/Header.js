@@ -85,7 +85,7 @@ export default function Header() {
   justify="center"
   alignItems="center"
   spacing={1}>
-    <Grid item xs={4}>
+    <Grid item xs={12} s={7} m={6} lg={6} xl={4}>
     <Paper className={classes.paper}>
     <Box xs={{ fontSize: 28 }} sm={{ fontSize: 30 }} md={{ fontSize: 40 }}>
       <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -98,9 +98,11 @@ export default function Header() {
           </Typography>
         </AccordionDetails>
         <Grid container item lg={7}>
-          <Typography>
+          <Typography component="div">
+          <Box textAlign="justify" m={1}>
       <Link href="https://swefuture20.github.io/Game-Generator/">  Game Generator
         </Link>
+        </Box>
         </Typography>
         </Grid>
       </Accordion>
@@ -178,9 +180,11 @@ export default function Header() {
           In this App, The goal for this app was to create a way to add employees using class constructors. The technology that was used for this app were inquirer, path, and file (dependencies) and node js. 
           </Typography>
           <Grid container item lg={7}>
-          <Typography>
+          <Typography component="div">
+          <Box textAlign="justify" m={1}>
       <Link href="https://drive.google.com/file/d/1qQC210gKqOJbNF795RRekV0mz-3oBd0z/view">  Video to Employee Summary
         </Link>
+        </Box>
         </Typography>
         </Grid>
         </AccordionDetails>

@@ -34,7 +34,7 @@ function App() {
   spacing={3}>
     <Paper className={classes.paper}>
       <Switch>
-        <Route exact path="/home">
+        <Route exact path="/">
         <HeaderAbove />
         <Body />
         <Header />

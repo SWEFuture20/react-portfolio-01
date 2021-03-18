@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 const styleFunction = breakpoints(typography);
 const Box = styled.div`
   ${styleFunction}
@@ -44,7 +45,7 @@ export default function Body() {
   justify="center"
   alignItems="center"
   spacing={3}>
-        <Grid item xs={4}>
+        <Grid item xs={12} s={7} m={6} lg={6} xl={4}>
         <Paper className={classes.paper}>
             <p>Hello Everyone, I am a programmer and I'm seeking a position as a full-time software engineer. On this website, I have shared a couple of projects that I have completed within the past two months.</p>
             </Paper>
