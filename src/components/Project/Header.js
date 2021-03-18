@@ -8,11 +8,25 @@ import { typography, breakpoints } from "@material-ui/system";
 import styled from "styled-components";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 const styleFunction = breakpoints(typography);
 const Box = styled.div`
   ${styleFunction}
 `;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
+
 const Accordion = withStyles({
   root: {
     border: '1px solid rgba(0, 0, 0, .125)',
@@ -61,8 +75,18 @@ export default function Header() {
     setExpanded(newExpanded ? panel : false);
   };
 
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
+      <Grid
+  container
+  direction="column"
+  justify="center"
+  alignItems="center"
+  spacing={1}>
+    <Grid item xs={4}>
+    <Paper className={classes.paper}>
     <Box xs={{ fontSize: 28 }} sm={{ fontSize: 30 }} md={{ fontSize: 40 }}>
       <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -131,7 +155,7 @@ export default function Header() {
       </Accordion>
       <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>EAT DA BURGER</Typography>
+          <Typography>Eat Da Burger</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -162,6 +186,9 @@ export default function Header() {
         </AccordionDetails>
       </Accordion>
       </Box>
+      </Paper>
+      </Grid>
+      </Grid>
     </div>
   );
 }
