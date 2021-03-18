@@ -1,5 +1,6 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FooterArea from './components/Footer/FooterArea'
 import HeaderAbove from './pages/Header'
 import Body from './components/Project/Body'
@@ -24,7 +25,8 @@ function App() {
   const classes = useStyles();
 
   return (
-  <Router>
+    <HashRouter basename='/'>
+  
     <div className={classes.root}>
     <Grid
   container
@@ -33,18 +35,18 @@ function App() {
   alignItems="center"
   spacing={3}>
     <Paper className={classes.paper}>
-      <Switch>
+      
         <Route exact path="/">
         <HeaderAbove />
         <Body />
         <Header />
         <FooterArea />
         </Route>
-      </Switch>
+      
       </Paper>
       </Grid>
     </div>
-  </Router>
+  </HashRouter>
   );
 }
 
